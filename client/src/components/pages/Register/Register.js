@@ -31,8 +31,6 @@ class Register extends Component {
 				this.setState({
 					registerSuccess: true
 				});
-
-				console.log('success resgister');
 			} else {
 				this.setState({
 					errorMessage: res.data.message

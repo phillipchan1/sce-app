@@ -22,16 +22,9 @@ userSchema.statics.authenticate = function(email, password, callback) {
 			var err = new Error('User not found');
 			err.status = 401;
 			return callback(err);
-		}
-		// success
-		// we use bcrypt compare method to check the hash of the password in DB with the hash of the pw the user inputted
-		// takes 3 arguments, 1) inputted pass 2) hash pw 3) callback
-		// the callback will contain the result of the comparison
-		else {
+		} else {
 			bcrypt.compare(password, user.password, function(error, result) {
 				if (result === true) {
-					// return null because first paramter is usually error.
-					// second parameter and beyond is whatever data and beyond.
 					return callback(null, user);
 				} else {
 					var err = new Error('Passwords dont match');
@@ -43,7 +36,6 @@ userSchema.statics.authenticate = function(email, password, callback) {
 };
 
 userSchema.pre('save', function(next) {
-	// this is the object we created
 	var user = this;
 
 	if (!user.isModified('password')) return next();
@@ -53,13 +45,10 @@ userSchema.pre('save', function(next) {
 			return next(err);
 		} else {
 			user.password = hash;
-			// calls the next function in the middleware stack
 			next();
 		}
 	});
 });
-
-// userSchema.plugin(findOrCreate);
 
 var User = mongoose.model('User', userSchema);
 
