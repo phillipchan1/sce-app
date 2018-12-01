@@ -18,12 +18,6 @@ router.get('/hi', (req, res, next) => {
 // authorization routes
 router.use('/auth', require('../components/Auth/AuthRoutes'));
 
-// public api routes
-router.use(
-	'/quizzes',
-	require('../components/Questionnaire/QuestionnairePublicRoutes')
-);
-
 // protected routes middleware
 router.use((req, res, next) => {
 	var token =
@@ -71,15 +65,5 @@ router.use((req, res, next) => {
     Protected Routes
 ************************************
 */
-
-router.use(
-	'/categorySet',
-	require('../components/CategorySet/CategorySetRoutes')
-);
-
-router.use(
-	'/questionnaire',
-	require('../components/Questionnaire/QuestionnaireRoutes')
-);
 
 module.exports = router;
