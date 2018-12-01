@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'mobx-react';
+import { hot } from 'react-hot-loader';
 
 // services
 import AuthStore from './stores/AuthStore';
@@ -43,4 +44,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default hot(module)(App);

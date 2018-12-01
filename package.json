@@ -27,6 +27,8 @@
 		"passport-jwt": "^4.0.0",
 		"passport-local": "^1.0.0",
 		"passport-local-mongoose": "^5.0.1",
+		"react-app-rewire-hot-loader": "^1.0.3",
+		"react-hot-loader": "^4.3.12",
 		"react-moment": "^0.8.1",
 		"react-sortablejs": "^1.4.0",
 		"react-table": "^6.8.6",

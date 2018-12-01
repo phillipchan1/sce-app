@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
+import ProtectedRoute from '../../services/ProtectedRoute';
+
 // components
 import Navigation from '../../organisms/Navigation/Navigation';
 
@@ -21,6 +23,8 @@ class Home extends Component {
 				}}
 			>
 				<Navigation />
+
+				<h1>Outtasge</h1>
 
 				<p>Welcome to SoCal Edison</p>
 			</div>
