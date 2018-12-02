@@ -90,14 +90,17 @@ class Login extends Component {
 									placeholder="Enter Your Password"
 								/>
 							</Form.Field>
-							<Button
-								onClick={this.handleSubmit.bind(this)}
-								type="submit"
-							>
-								Login
-							</Button>{' '}
-							Don't have an account?{' '}
-							<Link to={'/register'}>Register for one</Link>
+
+							<div className="auth-helper-container">
+								<Button
+									onClick={this.handleSubmit.bind(this)}
+									type="submit"
+								>
+									Login
+								</Button>{' '}
+								Don't have an account?{' '}
+								<Link to={'/register'}>Register for one</Link>
+							</div>
 						</Form>
 					</div>
 				</div>

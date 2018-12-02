@@ -12,10 +12,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center; }
+  .auth-page .auth-helper-container {
+    color: #aaa; }
 
 @media all and (max-width: 1000px) {
   .auth-page .auth-background {
     display: none; }
+  .auth-page .ui.button {
+    width: 100%;
+    margin-bottom: 1em;
+    display: block; }
   .auth-page .auth-container {
     justify-content: flex-start;
     width: 100%; } }

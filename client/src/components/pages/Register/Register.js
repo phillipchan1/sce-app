@@ -88,14 +88,16 @@ class Register extends Component {
 								placeholder="Enter Your Password"
 							/>
 						</Form.Field>
-						<Button
-							onClick={this.handleSubmit.bind(this)}
-							type="submit"
-						>
-							Register
-						</Button>{' '}
-						Already have an account?{' '}
-						<Link to={'/login'}>Login</Link>
+						<div className="auth-helper-container">
+							<Button
+								onClick={this.handleSubmit.bind(this)}
+								type="submit"
+							>
+								Register
+							</Button>{' '}
+							Already have an account?{' '}
+							<Link to={'/login'}>Login</Link>
+						</div>
 					</Form>
 				</div>
 			</div>
