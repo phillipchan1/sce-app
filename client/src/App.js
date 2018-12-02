@@ -8,6 +8,7 @@ import { hot } from 'react-hot-loader';
 // services
 import AuthStore from './stores/AuthStore';
 import AppMessagingStore from './stores/AppMessagingStore';
+import OuttageStore from './stores/OuttageStore';
 
 // service components
 import ProtectedRoute from './components/services/ProtectedRoute';
@@ -27,11 +28,14 @@ class App extends Component {
 			<Provider
 				AuthStore={new AuthStore()}
 				AppMessagingStore={new AppMessagingStore()}
+				OuttageStore={new OuttageStore()}
 			>
 				<Router>
 					<div className="app">
 						<Init />
 						<div className="router">
+							<ProtectedRoute path="/admin" component={Home} />
+
 							<ProtectedRoute path="/" component={Home} />
 
 							<Route path="/login" component={Login} />

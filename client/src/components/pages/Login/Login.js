@@ -54,44 +54,52 @@ class Login extends Component {
 			return <Redirect to="/" />;
 		} else {
 			return (
-				<div className="login-page" style={{ padding: '3em' }}>
-					<header style={{ marginBottom: '1rem' }}>
-						<Header as="h1">Login</Header>
-						{this.state.errorMessage ? (
-							<Message warning>
-								<p>{this.state.errorMessage}</p>
-							</Message>
-						) : (
-							''
-						)}
-					</header>
-					<Form>
-						<Form.Field>
-							<label>Email</label>
-							<input
-								onChange={this.handleChange.bind(this)}
-								name="email"
-								placeholder="Email"
-							/>
-						</Form.Field>
-						<Form.Field>
-							<label>Password</label>
-							<input
-								type="password"
-								onChange={this.handleChange.bind(this)}
-								name="password"
-								placeholder="Enter Your Password"
-							/>
-						</Form.Field>
-						<Button
-							onClick={this.handleSubmit.bind(this)}
-							type="submit"
-						>
-							Login
-						</Button>{' '}
-						Don't have an account?{' '}
-						<Link to={'/register'}>Register for one</Link>
-					</Form>
+				<div className="auth-page">
+					<div
+						className="auth-background"
+						style={{
+							backgroundImage: `url(https://source.unsplash.com/collection/2022043/1600x900)`
+						}}
+					/>
+					<div className="auth-container">
+						<header style={{ marginBottom: '1rem' }}>
+							<Header as="h1">Login</Header>
+							{this.state.errorMessage ? (
+								<Message warning>
+									<p>{this.state.errorMessage}</p>
+								</Message>
+							) : (
+								''
+							)}
+						</header>
+						<Form>
+							<Form.Field>
+								<label>Email</label>
+								<input
+									onChange={this.handleChange.bind(this)}
+									name="email"
+									placeholder="Email"
+								/>
+							</Form.Field>
+							<Form.Field>
+								<label>Password</label>
+								<input
+									type="password"
+									onChange={this.handleChange.bind(this)}
+									name="password"
+									placeholder="Enter Your Password"
+								/>
+							</Form.Field>
+							<Button
+								onClick={this.handleSubmit.bind(this)}
+								type="submit"
+							>
+								Login
+							</Button>{' '}
+							Don't have an account?{' '}
+							<Link to={'/register'}>Register for one</Link>
+						</Form>
+					</div>
 				</div>
 			);
 		}

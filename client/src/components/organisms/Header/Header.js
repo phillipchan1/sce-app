@@ -41,8 +41,8 @@ class Header extends Component {
 						<g />
 					</svg>
 				</div>
-				<div class="logo-container">SoCal Edison</div>
-				<div class="login-button-container">
+				<div className="logo-container">SoCal Edison</div>
+				<div className="login-button-container">
 					<div onClick={this.props.AuthStore.logout}>Logout</div>
 				</div>
 			</div>

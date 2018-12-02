@@ -1,0 +1,34 @@
+.auth-page {
+	display: flex;
+
+	.auth-background,
+	.auth-container {
+		width: 50%;
+		height: 100vh;
+	}
+
+	.auth-background {
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.auth-container {
+		padding: 3em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+@media all and (max-width: 1000px) {
+	.auth-page {
+		.auth-background {
+			display: none;
+		}
+
+		.auth-container {
+			justify-content: flex-start;
+			width: 100%;
+		}
+	}
+}

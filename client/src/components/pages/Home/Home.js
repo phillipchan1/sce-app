@@ -1,16 +1,20 @@
 // libraries
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import ProtectedRoute from '../../services/ProtectedRoute';
+import ProtectedRoute from '../../../components/services/ProtectedRoute';
 
 // components
 import Navigation from '../../organisms/Navigation/Navigation';
 import Header from '../../organisms/Header/Header';
-import moduleName from '../../atoms/BodyCard/BodyCard';
-import BodyCard from '../../atoms/BodyCard/BodyCard';
+
+// pages
+import OuttagesPage from '../../pages/OuttagesPage/OuttagesPage';
+import OuttagePage from '../../pages/OuttagePage/OuttagePage';
 
 @inject('AuthStore')
+@inject('OuttageStore')
 @observer
 class Home extends Component {
 	constructor(props) {
@@ -21,8 +25,11 @@ class Home extends Component {
 		};
 	}
 
+	componentDidMount() {
+		this.props.OuttageStore.getOuttages();
+	}
+
 	handleMenuOpen() {
-		console.log('open');
 		this.setState({
 			menuOpen: !this.state.menuOpen
 		});
@@ -35,11 +42,17 @@ class Home extends Component {
 				<Navigation menuOpen={this.state.menuOpen} />
 
 				<div className="body-content">
-					<BodyCard className="outtages">
-						<h1>Outtages</h1>
+					<ProtectedRoute exact path={`/`} component={OuttagesPage} />
 
-						<p>See outtages in the area</p>
-					</BodyCard>
+					<ProtectedRoute
+						exact
+						path={`/admin`}
+						component={OuttagesPage}
+					/>
+					<ProtectedRoute
+						path={`${this.props.match.url}/outtage/:id`}
+						component={OuttagePage}
+					/>
 				</div>
 			</div>
 		);

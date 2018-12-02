@@ -66,4 +66,7 @@ router.use((req, res, next) => {
 ************************************
 */
 
+// outtages
+router.use('/outtage', require('../components/Outtage/OuttageRoutes'));
+
 module.exports = router;

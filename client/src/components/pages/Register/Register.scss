@@ -1,0 +1,34 @@
+.register-page {
+	display: flex;
+
+	.register-background,
+	.register-container {
+		width: 50%;
+		height: 100vh;
+	}
+
+	.register-background {
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.register-container {
+		padding: 3em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+@media all and (max-width: 1000px) {
+	.register-page {
+		.register-background {
+			display: none;
+		}
+
+		.register-container {
+			justify-content: flex-start;
+			width: 100%;
+		}
+	}
+}

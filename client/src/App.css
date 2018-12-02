@@ -3,6 +3,16 @@
   border-radius: 3em;
   box-shadow: 10px 10px 3em rgba(0, 0, 0, 0.04); }
 
+.outtage-card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1em;
+  padding: 2em;
+  transition: all 0.15s ease-in-out; }
+  .outtage-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+
 .app-nav {
   align-content: center;
   background: #fff;
@@ -85,9 +95,97 @@
       .body-content .outtages {
         width: 100%; } }
 
+.outtage-page {
+  display: flex;
+  flex-wrap: wrap; }
+  .outtage-page .outtage-information {
+    width: 500px; }
+    .outtage-page .outtage-information .information-table {
+      padding: 3em;
+      display: flex;
+      flex-wrap: wrap; }
+      .outtage-page .outtage-information .information-table aside {
+        margin-bottom: 1em;
+        width: 50%; }
+      .outtage-page .outtage-information .information-table label {
+        display: block;
+        text-transform: uppercase;
+        color: #aaa;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        font-weight: bold; }
+  .outtage-page .updates-container {
+    width: 500px; }
+    .outtage-page .updates-container h2 {
+      text-align: center;
+      text-transform: uppercase;
+      color: #aaa;
+      font-size: 1em; }
+
+@media all and (max-width: 1000px) {
+  .outtage-page {
+    width: 100%; }
+    .outtage-page .outtage-information,
+    .outtage-page .updates-container {
+      width: 100%; }
+    .outtage-page .outtage-information {
+      margin-bottom: 2em; } }
+
+.auth-page {
+  display: flex; }
+  .auth-page .auth-background,
+  .auth-page .auth-container {
+    width: 50%;
+    height: 100vh; }
+  .auth-page .auth-background {
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .auth-page .auth-container {
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+
+@media all and (max-width: 1000px) {
+  .auth-page .auth-background {
+    display: none; }
+  .auth-page .auth-container {
+    justify-content: flex-start;
+    width: 100%; } }
+
+.register-page {
+  display: flex; }
+  .register-page .register-background,
+  .register-page .register-container {
+    width: 50%;
+    height: 100vh; }
+  .register-page .register-background {
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .register-page .register-container {
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+
+@media all and (max-width: 1000px) {
+  .register-page .register-background {
+    display: none; }
+  .register-page .register-container {
+    justify-content: flex-start;
+    width: 100%; } }
+
 body.vsc-initialized,
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Roboto' !important; }
+
+body.vsc-initialized a {
+  font-weight: 900;
+  color: #527aed; }
+
+body.vsc-initialized .ui.button {
+  background: #527aed;
+  color: #fff; }

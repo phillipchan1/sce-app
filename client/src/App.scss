@@ -1,10 +1,14 @@
 // components
 @import './components/atoms/BodyCard/BodyCard.scss';
+@import './components/molecules/OuttageCard/OuttageCard.scss';
 
 @import './components/organisms/Navigation/Navigation.scss';
 @import './components/organisms/Header/Header.scss';
 @import './components/molecules/AppMessage/AppMessage.scss';
 @import './components/pages/Home/Home.scss';
+@import './components/pages/OuttagePage/OuttagePage.scss';
+@import './components/pages/Login/Login.scss';
+@import './components/pages/Register/Register.scss';
 
 body.vsc-initialized,
 h1,
@@ -12,4 +16,16 @@ h2,
 h3,
 h4 {
 	font-family: 'Roboto' !important;
+}
+
+body.vsc-initialized {
+	a {
+		font-weight: 900;
+		color: #527aed;
+	}
+
+	.ui.button {
+		background: #527aed;
+		color: #fff;
+	}
 }

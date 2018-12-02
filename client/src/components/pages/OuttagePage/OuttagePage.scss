@@ -1,0 +1,54 @@
+.outtage-page {
+	display: flex;
+	flex-wrap: wrap;
+
+	.outtage-information {
+		width: 500px;
+
+		.information-table {
+			padding: 3em;
+			display: flex;
+			flex-wrap: wrap;
+
+			aside {
+				margin-bottom: 1em;
+				width: 50%;
+			}
+
+			label {
+				display: block;
+				text-transform: uppercase;
+				color: #aaa;
+				font-size: 0.8em;
+				letter-spacing: 1px;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.updates-container {
+		width: 500px;
+
+		h2 {
+			text-align: center;
+			text-transform: uppercase;
+			color: #aaa;
+			font-size: 1em;
+		}
+	}
+}
+
+@media all and (max-width: 1000px) {
+	.outtage-page {
+		width: 100%;
+
+		.outtage-information,
+		.updates-container {
+			width: 100%;
+		}
+
+		.outtage-information {
+			margin-bottom: 2em;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+.outtage-card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1em;
+  padding: 2em;
+  transition: all 0.15s ease-in-out; }
+  .outtage-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
