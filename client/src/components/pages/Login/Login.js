@@ -37,6 +37,8 @@ class Login extends Component {
 					loginSuccess: true
 				});
 
+				console.log(res);
+
 				this.props.AuthStore.login(res.data.user, res.data.token);
 			} else {
 				this.setState({

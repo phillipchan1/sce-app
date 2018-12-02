@@ -1,6 +1,64 @@
+.body-card {
+  background: #fff;
+  border-radius: 3em;
+  box-shadow: 10px 10px 3em rgba(0, 0, 0, 0.04); }
+
 .app-nav {
-  padding: 1rem;
-  display: flex; }
+  align-content: center;
+  background: #fff;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  left: 0;
+  position: fixed;
+  top: 62px;
+  transform: translateX(-100%);
+  transition: transform 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  width: 100px; }
+  .app-nav.open {
+    transform: translateX(0); }
+  .app-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em 0; }
+    .app-nav a:hover {
+      background: #efefef; }
+
+#header {
+  align-items: stretch;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+  #header .menu-container {
+    align-content: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100px; }
+  #header .logo-container {
+    align-items: center;
+    display: flex;
+    font-size: 1.5em;
+    font-weight: 800; }
+  #header .menu-container,
+  #header .login-button-container {
+    padding: 1em;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    #header .menu-container:hover,
+    #header .login-button-container:hover {
+      cursor: pointer;
+      background: #efefef; }
 
 #app-message {
   background: white;
@@ -12,5 +70,24 @@
   position: fixed;
   width: 100%; }
 
-body {
-  background: blue; }
+.body-content {
+  align-items: center;
+  background: #f9fafc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 60px;
+  padding: 2em; }
+  .body-content .outtages {
+    padding: 3em;
+    width: 800px; }
+    @media all and (max-width: 767px) {
+      .body-content .outtages {
+        width: 100%; } }
+
+body.vsc-initialized,
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Roboto' !important; }

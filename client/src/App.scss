@@ -1,6 +1,15 @@
-@import './components/organisms/Navigation/Navigation.scss';
-@import './components/molecules/AppMessage/AppMessage.scss';
+// components
+@import './components/atoms/BodyCard/BodyCard.scss';
 
-body {
-	background: blue;
+@import './components/organisms/Navigation/Navigation.scss';
+@import './components/organisms/Header/Header.scss';
+@import './components/molecules/AppMessage/AppMessage.scss';
+@import './components/pages/Home/Home.scss';
+
+body.vsc-initialized,
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Roboto' !important;
 }

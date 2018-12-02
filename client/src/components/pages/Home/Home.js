@@ -6,27 +6,41 @@ import ProtectedRoute from '../../services/ProtectedRoute';
 
 // components
 import Navigation from '../../organisms/Navigation/Navigation';
+import Header from '../../organisms/Header/Header';
+import moduleName from '../../atoms/BodyCard/BodyCard';
+import BodyCard from '../../atoms/BodyCard/BodyCard';
 
 @inject('AuthStore')
 @observer
 class Home extends Component {
-	componentDidMount() {}
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			menuOpen: false
+		};
+	}
+
+	handleMenuOpen() {
+		console.log('open');
+		this.setState({
+			menuOpen: !this.state.menuOpen
+		});
+	}
+
 	render() {
 		return (
-			<div
-				style={{
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'center',
-					padding: '3em',
-					flexDirection: 'column'
-				}}
-			>
-				<Navigation />
+			<div>
+				<Header handleMenuOpen={this.handleMenuOpen.bind(this)} />
+				<Navigation menuOpen={this.state.menuOpen} />
 
-				<h1>Outtasge</h1>
+				<div className="body-content">
+					<BodyCard className="outtages">
+						<h1>Outtages</h1>
 
-				<p>Welcome to SoCal Edison</p>
+						<p>See outtages in the area</p>
+					</BodyCard>
+				</div>
 			</div>
 		);
 	}

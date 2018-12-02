@@ -1,0 +1,14 @@
+.body-content {
+  align-items: center;
+  background: #f9fafc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 60px;
+  padding: 2em; }
+  .body-content .outtages {
+    padding: 3em;
+    width: 800px; }
+    @media all and (max-width: 767px) {
+      .body-content .outtages {
+        width: 100%; } }
