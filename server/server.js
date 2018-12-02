@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: false }));
 
-// db
+// db init
 require('./services/db');
 
 // routes

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const config = require('../config/config');
+const seeder = require('mongoose-seed');
 let dbURL;
 
 if (process.env.NODE_ENV === 'dev') {
@@ -13,8 +14,6 @@ if (process.env.NODE_ENV === 'dev') {
 	}/${config.db_name}`;
 }
 
-console.log('dbURL', dbURL);
-
 mongoose.connect(
 	dbURL,
 	err => {
@@ -23,5 +22,35 @@ mongoose.connect(
 		} else {
 			console.log('Successfully connected to mongodb at ' + dbURL);
 		}
+	}
+);
+
+// seed data
+seeder.connect(
+	dbURL,
+	() => {
+		seeder.loadModels(['server/components/Outtage/OuttageModel']);
+
+		seeder.clearModels(['Outtage'], function() {
+			seeder.populateModels(outtages, function() {
+				seeder.disconnect();
+			});
+		});
+
+		var outtages = [
+			{
+				model: 'Outtage',
+				documents: [
+					{
+						id: 1234,
+						type: 'planned'
+					},
+					{
+						id: 5678,
+						type: 'planned'
+					}
+				]
+			}
+		];
 	}
 );
