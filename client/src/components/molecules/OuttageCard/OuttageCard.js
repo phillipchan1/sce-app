@@ -5,7 +5,10 @@ class OuttageCard extends Component {
 	render() {
 		return (
 			<div className="outtage-card">
-				{this.props.id} city: {this.props.city}
+				<div className="outtage-info">
+					{this.props.address} {this.props.city}
+				</div>
+				<div className="status">{this.props.status}</div>
 			</div>
 		);
 	}
@@ -13,7 +16,8 @@ class OuttageCard extends Component {
 
 OuttageCard.propTypes = {
 	id: PropTypes.number,
-	city: PropTypes.string
+	city: PropTypes.string,
+	address: PropTypes.string
 };
 
 export default OuttageCard;

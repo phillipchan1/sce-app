@@ -48,32 +48,62 @@ seeder.connect(
 					{
 						id: 1234,
 						type: 'planned',
-						city: 'Chicago',
-						address: '920 S Rosemead Ave',
+						city: 'Pasadena',
+						address: '2920 S Colorado Ave',
 						customersImpacted: 12,
-						outageStartTime: 123213,
-						reason: 'Equipmenet Upgrade',
-						status: 'Not Started'
+						outtageStartTime: '04-12-2018 10:40',
+						estimatedRestorationTime: '04-12-2018 10:40',
+						reason: 'Equipment Upgrade',
+						status: 'Not Started',
+						zip: 91103
 					},
 					{
 						id: 5678,
-						type: 'planned',
-						city: 'Chicago',
-						address: '920 S Rosemead Ave',
+						type: 'unplanned',
+						city: 'Rosemead',
+						address: '1920 S Rosemead Ave',
 						customersImpacted: 10,
-						outageStartTime: 124124,
-						reason: 'Equipmenet Break',
-						status: 'Not Started'
+						outtageStartTime: '04-12-2018 10:40',
+						estimatedRestorationTime: '04-12-2018 10:40',
+						reason: 'Equipment Break',
+						status: 'Not Started',
+						zip: 91103
 					},
 					{
 						id: 567118,
 						type: 'planned',
-						city: 'Chicago',
-						address: '920 S Rosemead Ave',
+						city: 'La Puente',
+						address: '9120 S Basement Ave',
 						customersImpacted: 10,
-						outageStartTime: 124124,
-						reason: 'Equipmenet Break',
-						status: 'Not Started'
+						outtageStartTime: '04-12-2018 10:40',
+						estimatedRestorationTime: '04-12-2018 10:40',
+						reason: 'Equipment Break',
+						status: 'In Progress',
+						zip: 91103
+					},
+					{
+						id: 567112,
+						type: 'planned',
+						city: 'Pasadena',
+						address: '298 S River Ave',
+						customersImpacted: 10,
+						outtageStartTime: '04-12-2018 10:40',
+						estimatedRestorationTime: '04-12-2018 10:40',
+						reason: 'Equipment Break',
+						status: 'In Progress',
+						zip: 91103
+					},
+					{
+						id: 1412,
+						type: 'planned',
+						city: 'Eagle Rock',
+						address: '911120 S Basement Ave',
+						customersImpacted: 10,
+						outtageStartTime: '04-12-2018 10:40',
+						estimatedRestorationTime: '04-12-2018 10:40',
+						reason: 'Equipment Break',
+						status: 'Not Started',
+						zip: 91103
 					}
 				]
 			}

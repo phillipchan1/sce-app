@@ -2,11 +2,25 @@
 	background: #fff;
 	border-radius: 4px;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+	color: #333;
 	margin-bottom: 1em;
+	font-weight: 500;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
 	padding: 2em;
 	transition: all 0.15s ease-in-out;
 
 	&:hover {
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+	}
+
+	.status {
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		padding: 1em;
+		color: rgba(0, 0, 0, 0.2);
+		text-transform: uppercase;
+		font-size: 0.8em;
 	}
 }

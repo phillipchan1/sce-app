@@ -37,4 +37,12 @@
 			background: #efefef;
 		}
 	}
+	.login-button-container {
+		box-sizing: border-box;
+
+		svg {
+			box-sizing: border-box;
+			padding-right: 0.5em;
+		}
+	}
 }

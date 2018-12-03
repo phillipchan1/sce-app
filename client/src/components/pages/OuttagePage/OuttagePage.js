@@ -74,8 +74,9 @@ class OuttagePage extends Component {
 					<div className="outtage-information">
 						<h1>Outage</h1>
 						<p>
-							{this.state.currentOuttage.address},
-							{this.state.currentOuttage.city}
+							{this.state.currentOuttage.address},{' '}
+							{this.state.currentOuttage.city}{' '}
+							{this.state.currentOuttage.zip}
 						</p>
 
 						<BodyCard className="information-table">
@@ -97,6 +98,17 @@ class OuttagePage extends Component {
 							<aside>
 								<label>Reason</label>
 								{this.state.currentOuttage.reason}
+							</aside>
+							<aside>
+								<label>Outtage Start Time</label>
+								{this.state.currentOuttage.outtageStartTime}
+							</aside>
+							<aside>
+								<label>Estimated Restoration Time</label>
+								{
+									this.state.currentOuttage
+										.estimatedRestorationTime
+								}
 							</aside>
 						</BodyCard>
 					</div>

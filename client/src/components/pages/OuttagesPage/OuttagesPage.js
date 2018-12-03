@@ -19,7 +19,7 @@ class OuttagesPage extends Component {
 				{this.props.OuttageStore.outtages.map(outtage => {
 					return (
 						<Link to={`/admin/outtage/${outtage._id}`}>
-							<OuttageCard id={outtage.id} city={outtage.city} />
+							<OuttageCard {...outtage} />
 						</Link>
 					);
 				})}

@@ -30,3 +30,8 @@
     #header .login-button-container:hover {
       cursor: pointer;
       background: #efefef; }
+  #header .login-button-container {
+    box-sizing: border-box; }
+    #header .login-button-container svg {
+      box-sizing: border-box;
+      padding-right: 0.5em; }
