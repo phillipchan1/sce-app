@@ -26,7 +26,6 @@ class Register extends Component {
 
 	handleSubmit() {
 		axios.post(`/api/auth/register`, this.state).then(res => {
-			console.log(res);
 			if (res.data.success) {
 				this.setState({
 					registerSuccess: true
