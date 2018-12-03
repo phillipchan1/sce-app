@@ -1,4 +1,4 @@
-.body-content {
+.body-container {
 	align-items: center;
 	background: #f9fafc;
 	display: flex;
@@ -6,6 +6,14 @@
 	min-height: 100vh;
 	margin-top: 60px;
 	padding: 2em;
+
+	.body-content {
+		width: 1080px;
+
+		@media all and (max-width: 1000px) {
+			width: 100%;
+		}
+	}
 
 	.outtages {
 		padding: 3em;

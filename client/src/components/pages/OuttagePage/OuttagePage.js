@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import { Modal, Button } from 'semantic-ui-react';
+
 import BodyCard from '../../atoms/BodyCard/BodyCard';
+import UpdateCard from '../../molecules/UpdateCard/UpdateCard';
+import AddEditJobUpdate from '../../molecules/AddEditJobUpdate/AddEditJobUpdate';
 
 class OuttagePage extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			currentOuttage: {}
+			currentOuttage: {},
+			updates: []
 		};
 	}
 
@@ -22,10 +27,33 @@ class OuttagePage extends Component {
 				}
 			})
 			.then(res => {
-				this.setState({
-					currentOuttage: res.data.data
-				});
+				this.setState(
+					{
+						currentOuttage: res.data.data
+					},
+					() => {
+						this.getUpdates();
+					}
+				);
 			});
+	}
+
+	getUpdates() {
+		const jwtoken = localStorage.getItem('jwtoken');
+
+		axios
+			.get(`/api/outtage/${this.state.currentOuttage.id}/updates`, {
+				headers: {
+					token: jwtoken
+				}
+			})
+			.then(res => {
+				this.setState({ updates: res.data.data });
+			});
+	}
+
+	handleJobUpdate() {
+		this.getUpdates();
 	}
 
 	render() {
@@ -65,6 +93,38 @@ class OuttagePage extends Component {
 					</div>
 					<div className="updates-container">
 						<h2>Updates</h2>
+						{this.state.updates.length > 0
+							? this.state.updates.map(update => {
+									return <UpdateCard {...update} />;
+							  })
+							: 'No Updates Yet'}
+
+						<Modal
+							trigger={
+								<Button>
+									<svg
+										width="30"
+										height="30"
+										enable-background="new 0 0 100 100"
+										id="Layer_1"
+										version="1.1"
+										viewBox="0 0 100 100"
+									>
+										<polygon
+											fill="#010101"
+											points="80.2,51.6 51.4,51.6 51.4,22.6 48.9,22.6 48.9,51.6 19.9,51.6 19.9,54.1 48.9,54.1 48.9,83.1   51.4,83.1 51.4,54.1 80.4,54.1 80.4,51.6 "
+										/>
+									</svg>
+								</Button>
+							}
+						>
+							<Modal.Content image>
+								<AddEditJobUpdate
+									outtageId={this.state.currentOuttage.id}
+									jobUpdated={this.handleJobUpdate.bind(this)}
+								/>
+							</Modal.Content>
+						</Modal>
 					</div>
 				</div>
 			);

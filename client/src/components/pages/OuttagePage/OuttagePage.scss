@@ -3,7 +3,7 @@
 	flex-wrap: wrap;
 
 	.outtage-information {
-		width: 500px;
+		width: 50%;
 
 		.information-table {
 			padding: 3em;
@@ -27,7 +27,16 @@
 	}
 
 	.updates-container {
-		width: 500px;
+		text-align: center;
+		width: 50%;
+		padding: 0 4em;
+		display: flex;
+		flex-direction: column;
+
+		button {
+			width: 50px;
+			border-radius: 50% !important;
+		}
 
 		h2 {
 			text-align: center;

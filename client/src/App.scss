@@ -1,6 +1,8 @@
 // components
 @import './components/atoms/BodyCard/BodyCard.scss';
 @import './components/molecules/OuttageCard/OuttageCard.scss';
+@import './components/molecules/UpdateCard/UpdateCard.scss';
+@import './components/molecules/AddEditJobUpdate/AddEditJobUpdate.scss';
 
 @import './components/organisms/Navigation/Navigation.scss';
 @import './components/organisms/Header/Header.scss';
@@ -28,5 +30,14 @@ body.vsc-initialized {
 		background: #fcd156;
 		color: #222;
 		border-radius: 18px;
+	}
+
+	.ui.modal {
+		box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+		border-radius: 2em;
+	}
+
+	.ui.dimmer {
+		background: rgba(0, 0, 0, 0.15);
 	}
 }

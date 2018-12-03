@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap; }
   .outtage-page .outtage-information {
-    width: 500px; }
+    width: 50%; }
     .outtage-page .outtage-information .information-table {
       padding: 3em;
       display: flex;
@@ -18,7 +18,14 @@
         letter-spacing: 1px;
         font-weight: bold; }
   .outtage-page .updates-container {
-    width: 500px; }
+    text-align: center;
+    width: 50%;
+    padding: 0 4em;
+    display: flex;
+    flex-direction: column; }
+    .outtage-page .updates-container button {
+      width: 50px;
+      border-radius: 50% !important; }
     .outtage-page .updates-container h2 {
       text-align: center;
       text-transform: uppercase;

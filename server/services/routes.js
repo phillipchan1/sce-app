@@ -66,7 +66,8 @@ router.use((req, res, next) => {
 ************************************
 */
 
-// outtages
 router.use('/outtage', require('../components/Outtage/OuttageRoutes'));
+
+router.use('/jobupdate', require('../components/JobUpdate/JobUpdateRoutes'));
 
 module.exports = router;

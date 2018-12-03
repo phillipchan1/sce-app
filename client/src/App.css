@@ -13,6 +13,31 @@
   .outtage-card:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
 
+.update-card {
+  width: 100%;
+  background: #394bb0;
+  color: #fff;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em 2em;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15); }
+  .update-card aside {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+    margin-bottom: 0.5em; }
+    .update-card aside label {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.8em;
+      opacity: 0.7; }
+
+.add-update-job-update {
+  width: 100%; }
+
 .app-nav {
   align-content: center;
   background: #fff;
@@ -80,7 +105,7 @@
   position: fixed;
   width: 100%; }
 
-.body-content {
+.body-container {
   align-items: center;
   background: #f9fafc;
   display: flex;
@@ -88,18 +113,23 @@
   min-height: 100vh;
   margin-top: 60px;
   padding: 2em; }
-  .body-content .outtages {
+  .body-container .body-content {
+    width: 1080px; }
+    @media all and (max-width: 1000px) {
+      .body-container .body-content {
+        width: 100%; } }
+  .body-container .outtages {
     padding: 3em;
     width: 800px; }
     @media all and (max-width: 767px) {
-      .body-content .outtages {
+      .body-container .outtages {
         width: 100%; } }
 
 .outtage-page {
   display: flex;
   flex-wrap: wrap; }
   .outtage-page .outtage-information {
-    width: 500px; }
+    width: 50%; }
     .outtage-page .outtage-information .information-table {
       padding: 3em;
       display: flex;
@@ -115,7 +145,14 @@
         letter-spacing: 1px;
         font-weight: bold; }
   .outtage-page .updates-container {
-    width: 500px; }
+    text-align: center;
+    width: 50%;
+    padding: 0 4em;
+    display: flex;
+    flex-direction: column; }
+    .outtage-page .updates-container button {
+      width: 50px;
+      border-radius: 50% !important; }
     .outtage-page .updates-container h2 {
       text-align: center;
       text-transform: uppercase;
@@ -196,3 +233,10 @@ body.vsc-initialized .ui.button {
   background: #fcd156;
   color: #222;
   border-radius: 18px; }
+
+body.vsc-initialized .ui.modal {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+  border-radius: 2em; }
+
+body.vsc-initialized .ui.dimmer {
+  background: rgba(0, 0, 0, 0.15); }

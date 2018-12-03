@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Outtage = require('./OuttageModel');
-const JobUpdate = require('../JobUpdate/JobUpdateModel');
+const JobUpdate = require('./JobUpdateModel');
 
 router.get('/', (req, res, next) => {
-	Outtage.find({}, (err, Outtages) => {
+	JobUpdate.find({}, (err, JobUpdates) => {
 		if (!err) {
 			res.json({
 				success: true,
-				data: Outtages
+				data: JobUpdates
 			});
 		} else {
 			res.status(400).json({ success: false, message: err });
@@ -19,11 +18,11 @@ router.get('/', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
 	var id = req.params.id;
 
-	Outtage.findOne({ _id: id }, (err, Outtage) => {
-		if (Outtage) {
+	JobUpdate.findOne({ _id: id }, (err, JobUpdate) => {
+		if (JobUpdate) {
 			res.status(200).json({
 				success: true,
-				data: Outtage
+				data: JobUpdate
 			});
 		} else {
 			res.status(200).json({
@@ -34,22 +33,10 @@ router.get('/:id', (req, res, next) => {
 	});
 });
 
-router.get('/:id/updates', (req, res, next) => {
-	var id = req.params.id;
-
-	JobUpdate.find({ outtageId: id }, (err, updates) => {
-		if (!err) {
-			res.json({ success: true, data: updates });
-		} else {
-			res.status(400).json({ success: false, message: err });
-		}
-	});
-});
-
 router.delete('/', (req, res, next) => {
 	var id = req.body._id;
 
-	Outtage.findOneAndDelete(
+	JobUpdate.findOneAndDelete(
 		{
 			_id: id
 		},
@@ -71,7 +58,7 @@ router.post('/', (req, res, next) => {
 
 		delete updateParams.id;
 
-		Outtage.findOneAndUpdate(
+		JobUpdate.findOneAndUpdate(
 			{
 				_id: id
 			},
@@ -95,13 +82,13 @@ router.post('/', (req, res, next) => {
 			}
 		);
 	} else {
-		var newOuttage = new Outtage(req.body);
+		var newJobUpdate = new JobUpdate(req.body);
 
-		newOuttage.markModified('categories');
+		newJobUpdate.markModified('categories');
 
-		newOuttage.save((err, Outtage) => {
+		newJobUpdate.save((err, JobUpdate) => {
 			if (!err) {
-				res.json({ success: true, Outtage: Outtage });
+				res.json({ success: true, JobUpdate: JobUpdate });
 			} else {
 				res.status(200).json({
 					success: false,

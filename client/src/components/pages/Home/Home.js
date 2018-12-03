@@ -41,18 +41,24 @@ class Home extends Component {
 				<Header handleMenuOpen={this.handleMenuOpen.bind(this)} />
 				<Navigation menuOpen={this.state.menuOpen} />
 
-				<div className="body-content">
-					<ProtectedRoute exact path={`/`} component={OuttagesPage} />
+				<div className="body-container">
+					<div className="body-content">
+						<ProtectedRoute
+							exact
+							path={`/`}
+							component={OuttagesPage}
+						/>
 
-					<ProtectedRoute
-						exact
-						path={`/admin`}
-						component={OuttagesPage}
-					/>
-					<ProtectedRoute
-						path={`${this.props.match.url}/outtage/:id`}
-						component={OuttagePage}
-					/>
+						<ProtectedRoute
+							exact
+							path={`/admin`}
+							component={OuttagesPage}
+						/>
+						<ProtectedRoute
+							path={`${this.props.match.url}/outtage/:id`}
+							component={OuttagePage}
+						/>
+					</div>
 				</div>
 			</div>
 		);

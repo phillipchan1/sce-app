@@ -1,0 +1,21 @@
+.update-card {
+  width: 100%;
+  background: #394bb0;
+  color: #fff;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em 2em;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15); }
+  .update-card aside {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+    margin-bottom: 0.5em; }
+    .update-card aside label {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.8em;
+      opacity: 0.7; }

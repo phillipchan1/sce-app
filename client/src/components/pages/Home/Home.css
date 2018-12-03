@@ -1,4 +1,4 @@
-.body-content {
+.body-container {
   align-items: center;
   background: #f9fafc;
   display: flex;
@@ -6,9 +6,14 @@
   min-height: 100vh;
   margin-top: 60px;
   padding: 2em; }
-  .body-content .outtages {
+  .body-container .body-content {
+    width: 1080px; }
+    @media all and (max-width: 1000px) {
+      .body-container .body-content {
+        width: 100%; } }
+  .body-container .outtages {
     padding: 3em;
     width: 800px; }
     @media all and (max-width: 767px) {
-      .body-content .outtages {
+      .body-container .outtages {
         width: 100%; } }
