@@ -22,15 +22,25 @@
     width: 50%;
     padding: 0 4em;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    align-items: center; }
     .outtage-page .updates-container button {
-      width: 50px;
+      width: 70px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+      font-size: 0.8em;
+      height: 70px;
       border-radius: 50% !important; }
+      .outtage-page .updates-container button:hover {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.25); }
     .outtage-page .updates-container h2 {
       text-align: center;
       text-transform: uppercase;
       color: #aaa;
       font-size: 1em; }
+    .outtage-page .updates-container .update-helper-text {
+      opacity: 0.7;
+      padding: 2em 0;
+      font-style: italic; }
 
 @media all and (max-width: 1000px) {
   .outtage-page {
@@ -45,4 +55,6 @@
       .outtage-page .updates-container h2 {
         align-self: flex-start; }
     .outtage-page .add-update-button {
-      position: fixed; } }
+      position: fixed;
+      bottom: 2em;
+      right: 2em; } }

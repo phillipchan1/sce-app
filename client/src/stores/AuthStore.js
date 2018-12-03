@@ -22,6 +22,7 @@ class AuthStore {
 
 	@action.bound
 	logout() {
+		console.log('logging out');
 		localStorage.removeItem('jwtoken');
 		this.isAuthenticated = false;
 		this.currentUser = {};
@@ -51,10 +52,12 @@ class AuthStore {
 					if (res.data.success) {
 						this.login(res.data.user, jwtoken);
 					} else {
+						console.log('should logout');
 						this.logout();
 					}
 				});
 		} else {
+			console.log('should logout');
 			this.logout();
 		}
 	}
