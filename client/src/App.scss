@@ -20,30 +20,30 @@ h4 {
 	font-family: 'Roboto' !important;
 }
 
-body.vsc-initialized {
-	background: #f9fafc;
+body {
+	background: #f9fafc !important;
 
 	a {
-		font-weight: 900;
-		color: #fcd156;
+		font-weight: 900 !important;
+		color: #fcd156 !important;
 	}
 
 	.ui.button {
-		background: #fcd156;
-		color: #222;
-		border-radius: 18px;
+		background: #fcd156 !important;
+		color: #222 !important;
+		// border-radius: 18px !important;
 	}
 
 	.ui.modal {
-		box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
-		border-radius: 3em;
+		box-shadow: 0 0 40px rgba(0, 0, 0, 0.05) !important;
+		border-radius: 3em !important;
 	}
 
 	.ui.dimmer {
-		background: rgba(0, 0, 0, 0.15);
+		background: rgba(0, 0, 0, 0.15) !important;
 	}
 
 	.body-container:nth-of-type(2) {
-		display: none;
+		display: none !important;
 	}
 }
