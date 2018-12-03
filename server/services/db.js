@@ -118,7 +118,7 @@ seeder.connect(
 						zip: 91103
 					},
 					{
-						id: 223,
+						id: 2213,
 						type: 'planned',
 						city: 'Pasadena',
 						address: '298 S River Ave',

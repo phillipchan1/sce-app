@@ -127,7 +127,6 @@
   background: #f9fafc;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   margin-top: 60px;
   padding: 2em; }
   .body-container .body-content {
@@ -264,21 +263,19 @@ h3,
 h4 {
   font-family: 'Roboto' !important; }
 
-body.vsc-initialized a {
-  font-weight: 900;
-  color: #fcd156; }
-
-body.vsc-initialized .ui.button {
-  background: #fcd156;
-  color: #222;
-  border-radius: 18px; }
-
-body.vsc-initialized .ui.modal {
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
-  border-radius: 3em; }
-
-body.vsc-initialized .ui.dimmer {
-  background: rgba(0, 0, 0, 0.15); }
-
-body.vsc-initialized .body-container:nth-of-type(2) {
-  display: none; }
+body.vsc-initialized {
+  background: #f9fafc; }
+  body.vsc-initialized a {
+    font-weight: 900;
+    color: #fcd156; }
+  body.vsc-initialized .ui.button {
+    background: #fcd156;
+    color: #222;
+    border-radius: 18px; }
+  body.vsc-initialized .ui.modal {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+    border-radius: 3em; }
+  body.vsc-initialized .ui.dimmer {
+    background: rgba(0, 0, 0, 0.15); }
+  body.vsc-initialized .body-container:nth-of-type(2) {
+    display: none; }

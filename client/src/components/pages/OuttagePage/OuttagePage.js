@@ -46,22 +46,6 @@ class OuttagePage extends Component {
 
 		if (this.state.currentOuttage) {
 			axios
-				.get(`/api/outtage/${this.props.match.params.id}`, {
-					headers: {
-						token: jwtoken
-					}
-				})
-				.then(res => {
-					this.setState(
-						{
-							currentOuttage: res.data.data
-						},
-						() => {
-							this.getUpdates();
-						}
-					);
-				});
-			axios
 				.get(`/api/outtage/${this.state.currentOuttage.id}/updates`, {
 					headers: {
 						token: jwtoken
