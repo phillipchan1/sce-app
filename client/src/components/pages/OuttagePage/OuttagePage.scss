@@ -59,5 +59,17 @@
 		.outtage-information {
 			margin-bottom: 2em;
 		}
+
+		.updates-container {
+			padding: 0;
+
+			h2 {
+				align-self: flex-start;
+			}
+		}
+
+		.add-update-button {
+			position: fixed;
+		}
 	}
 }

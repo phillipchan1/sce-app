@@ -101,7 +101,7 @@ class OuttagePage extends Component {
 
 						<Modal
 							trigger={
-								<Button>
+								<Button className="add-update-button">
 									<svg
 										width="30"
 										height="30"

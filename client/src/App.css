@@ -166,7 +166,13 @@
     .outtage-page .updates-container {
       width: 100%; }
     .outtage-page .outtage-information {
-      margin-bottom: 2em; } }
+      margin-bottom: 2em; }
+    .outtage-page .updates-container {
+      padding: 0; }
+      .outtage-page .updates-container h2 {
+        align-self: flex-start; }
+    .outtage-page .add-update-button {
+      position: fixed; } }
 
 .auth-page {
   display: flex; }
