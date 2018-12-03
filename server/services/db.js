@@ -104,6 +104,30 @@ seeder.connect(
 						reason: 'Equipment Break',
 						status: 'Not Started',
 						zip: 91103
+					},
+					{
+						id: 56711218,
+						type: 'planned',
+						city: 'La Puente',
+						address: '9120 S Basement Ave',
+						customersImpacted: 10,
+						outtageStartTime: '04-12-2018 10:40',
+						estimatedRestorationTime: '04-12-2018 10:40',
+						reason: 'Equipment Break',
+						status: 'In Progress',
+						zip: 91103
+					},
+					{
+						id: 223,
+						type: 'planned',
+						city: 'Pasadena',
+						address: '298 S River Ave',
+						customersImpacted: 10,
+						outtageStartTime: '04-12-2018 10:40',
+						estimatedRestorationTime: '04-12-2018 10:40',
+						reason: 'Equipment Break',
+						status: 'In Progress',
+						zip: 91103
 					}
 				]
 			}

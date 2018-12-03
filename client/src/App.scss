@@ -40,4 +40,8 @@ body.vsc-initialized {
 	.ui.dimmer {
 		background: rgba(0, 0, 0, 0.15);
 	}
+
+	.body-container:nth-of-type(2) {
+		display: none;
+	}
 }

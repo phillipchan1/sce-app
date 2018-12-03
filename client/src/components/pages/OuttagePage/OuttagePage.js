@@ -21,36 +21,59 @@ class OuttagePage extends Component {
 	componentDidMount() {
 		const jwtoken = localStorage.getItem('jwtoken');
 
-		axios
-			.get(`/api/outtage/${this.props.match.params.id}`, {
-				headers: {
-					token: jwtoken
-				}
-			})
-			.then(res => {
-				this.setState(
-					{
-						currentOuttage: res.data.data
-					},
-					() => {
-						this.getUpdates();
+		if (this.state.currentOuttage) {
+			axios
+				.get(`/api/outtage/${this.props.match.params.id}`, {
+					headers: {
+						token: jwtoken
 					}
-				);
-			});
+				})
+				.then(res => {
+					this.setState(
+						{
+							currentOuttage: res.data.data
+						},
+						() => {
+							this.getUpdates();
+						}
+					);
+				});
+		}
 	}
 
 	getUpdates() {
 		const jwtoken = localStorage.getItem('jwtoken');
 
-		axios
-			.get(`/api/outtage/${this.state.currentOuttage.id}/updates`, {
-				headers: {
-					token: jwtoken
-				}
-			})
-			.then(res => {
-				this.setState({ updates: res.data.data });
-			});
+		if (this.state.currentOuttage) {
+			axios
+				.get(`/api/outtage/${this.props.match.params.id}`, {
+					headers: {
+						token: jwtoken
+					}
+				})
+				.then(res => {
+					this.setState(
+						{
+							currentOuttage: res.data.data
+						},
+						() => {
+							this.getUpdates();
+						}
+					);
+				});
+			axios
+				.get(`/api/outtage/${this.state.currentOuttage.id}/updates`, {
+					headers: {
+						token: jwtoken
+					}
+				})
+				.then(res => {
+					if (res.data.success) {
+						this.setState({ updates: res.data.data });
+					} else {
+					}
+				});
+		}
 	}
 
 	handleJobUpdate() {
@@ -66,7 +89,7 @@ class OuttagePage extends Component {
 	handleClose = () => this.setState({ modalOpen: false });
 
 	render() {
-		if (!this.state.currentOuttage.id) {
+		if (!this.state.currentOuttage || !this.state.currentOuttage.id) {
 			return 'Outtage not found';
 		} else {
 			return (

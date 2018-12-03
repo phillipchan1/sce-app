@@ -279,3 +279,6 @@ body.vsc-initialized .ui.modal {
 
 body.vsc-initialized .ui.dimmer {
   background: rgba(0, 0, 0, 0.15); }
+
+body.vsc-initialized .body-container:nth-of-type(2) {
+  display: none; }
