@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Select, Button } from 'semantic-ui-react';
-import {
-	DateInput,
-	TimeInput,
-	DateTimeInput,
-	DatesRangeInput
-} from 'semantic-ui-calendar-react';
+import { DateTimeInput } from 'semantic-ui-calendar-react';
 import axios from 'axios';
 
 class AddEditJobUpdate extends Component {

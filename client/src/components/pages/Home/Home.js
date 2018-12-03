@@ -1,7 +1,6 @@
 // libraries
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ProtectedRoute from '../../../components/services/ProtectedRoute';
 

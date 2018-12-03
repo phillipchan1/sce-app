@@ -77,7 +77,7 @@ class OuttagePage extends Component {
 			return 'Outtage not found';
 		} else {
 			return (
-				<div class="outtage-page">
+				<div className="outtage-page">
 					<div className="outtage-information">
 						<h1>Outage</h1>
 						<p>
@@ -123,10 +123,12 @@ class OuttagePage extends Component {
 						<h2>Updates</h2>
 						{this.state.updates.length > 0 ? (
 							this.state.updates.map(update => {
-								return <UpdateCard {...update} />;
+								return (
+									<UpdateCard key={update._id} {...update} />
+								);
 							})
 						) : (
-							<div class="update-helper-text">
+							<div className="update-helper-text">
 								No Updates Yet. Add an update .
 							</div>
 						)}

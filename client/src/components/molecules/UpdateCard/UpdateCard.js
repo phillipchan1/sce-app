@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class UpdateCard extends Component {
 	render() {
 		return (
-			<div class="update-card">
+			<div className="update-card">
 				<aside>
 					<label>Arrival Time</label>
 					{this.props.arrivalTime}
@@ -31,7 +31,7 @@ class UpdateCard extends Component {
 
 UpdateCard.propTypes = {
 	arrivalTime: PropTypes.string,
-	estimatedWorkTime: PropTypes.string,
+	estimatedWorkTime: PropTypes.number,
 	delayCode: PropTypes.string,
 	completeTime: PropTypes.string
 };

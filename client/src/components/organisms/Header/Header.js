@@ -12,7 +12,7 @@ class Header extends Component {
 					onClick={this.props.handleMenuOpen}
 				>
 					<svg
-						enable-background="new 0 0 32 32"
+						enableBackground="new 0 0 32 32"
 						height="32px"
 						id="Слой_1"
 						version="1.1"

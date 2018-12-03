@@ -1,7 +1,7 @@
 // libraries
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 import { hot } from 'react-hot-loader';
 
@@ -13,6 +13,7 @@ import OuttageStore from './stores/OuttageStore';
 // service components
 import ProtectedRoute from './components/services/ProtectedRoute';
 import Init from './components/services/Init';
+import ScrollToTop from './components/services/ScrollToTop';
 
 // pages
 import Home from './components/pages/Home/Home';
@@ -34,12 +35,17 @@ class App extends Component {
 					<div className="app">
 						<Init />
 						<div className="router">
-							<ProtectedRoute path="/admin" component={Home} />
+							<ScrollToTop>
+								<ProtectedRoute
+									path="/admin"
+									component={Home}
+								/>
 
-							<ProtectedRoute path="/" component={Home} />
+								<ProtectedRoute path="/" component={Home} />
 
-							<Route path="/login" component={Login} />
-							<Route path="/register" component={Register} />
+								<Route path="/login" component={Login} />
+								<Route path="/register" component={Register} />
+							</ScrollToTop>
 						</div>
 					</div>
 				</Router>
