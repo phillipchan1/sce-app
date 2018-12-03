@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import { Form, Select, Button } from 'semantic-ui-react';
+import {
+	DateInput,
+	TimeInput,
+	DateTimeInput,
+	DatesRangeInput
+} from 'semantic-ui-calendar-react';
 import axios from 'axios';
 
 class AddEditJobUpdate extends Component {
@@ -22,10 +28,10 @@ class AddEditJobUpdate extends Component {
 		{ key: '189', value: '189', text: '189 - Hungry (Needed Food)' }
 	];
 
-	handleChange(e) {
+	handleChange(e, { name, value }) {
 		var newState = this.state;
 
-		newState.currentJobUpdate[e.target.name] = e.target.value;
+		newState.currentJobUpdate[name] = value;
 
 		this.setState(newState);
 	}
@@ -54,17 +60,25 @@ class AddEditJobUpdate extends Component {
 				<Form>
 					<Form.Field>
 						<label>Arrival Time</label>
-						<input
+						<DateTimeInput
 							name="arrivalTime"
+							placeholder="Date Time"
+							value={this.state.currentJobUpdate.arrivalTime}
+							iconPosition="left"
 							onChange={this.handleChange.bind(this)}
-							placeholder="Arrival Time"
 						/>
 					</Form.Field>
 					<Form.Field>
 						<label>Estimated Work Time</label>
 						<input
 							name="estimatedWorkTime"
-							onChange={this.handleChange.bind(this)}
+							onChange={e => {
+								var newState = this.state;
+
+								newState.currentJobUpdate.estimatedWorkTime =
+									e.target.value;
+								this.setState(newState);
+							}}
 							placeholder="Hours"
 						/>
 					</Form.Field>
@@ -86,10 +100,12 @@ class AddEditJobUpdate extends Component {
 					</Form.Field>
 					<Form.Field>
 						<label>Complete Work Time</label>
-						<input
+						<DateTimeInput
 							name="completeTime"
-							onChange={this.handleChange.bind(this)}
 							placeholder="Time"
+							value={this.state.currentJobUpdate.completeTime}
+							iconPosition="left"
+							onChange={this.handleChange.bind(this)}
 						/>
 					</Form.Field>
 				</Form>

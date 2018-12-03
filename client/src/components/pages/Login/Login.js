@@ -63,7 +63,7 @@ class Login extends Component {
 					/>
 					<div className="auth-container">
 						<header style={{ marginBottom: '1rem' }}>
-							<Header as="h1">Login</Header>
+							<Header as="h1">SCE App Login</Header>
 							{this.state.errorMessage ? (
 								<Message warning>
 									<p>{this.state.errorMessage}</p>
