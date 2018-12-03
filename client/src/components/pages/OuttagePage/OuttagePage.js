@@ -13,7 +13,8 @@ class OuttagePage extends Component {
 
 		this.state = {
 			currentOuttage: {},
-			updates: []
+			updates: [],
+			modalOpen: false
 		};
 	}
 
@@ -54,7 +55,15 @@ class OuttagePage extends Component {
 
 	handleJobUpdate() {
 		this.getUpdates();
+
+		this.setState({
+			modalOpen: false
+		});
 	}
+
+	handleOpen = () => this.setState({ modalOpen: true });
+
+	handleClose = () => this.setState({ modalOpen: false });
 
 	render() {
 		if (!this.state.currentOuttage.id) {
@@ -105,10 +114,15 @@ class OuttagePage extends Component {
 
 						<Modal
 							trigger={
-								<Button className="add-update-button">
+								<Button
+									onClick={this.handleOpen.bind(this)}
+									className="add-update-button"
+								>
 									Add Update
 								</Button>
 							}
+							open={this.state.modalOpen}
+							onClose={this.handleClose}
 						>
 							<Modal.Content image>
 								<AddEditJobUpdate

@@ -23,10 +23,11 @@ class AddEditJobUpdate extends Component {
 	];
 
 	handleChange(e) {
-		console.log(e.target.name);
-		this.setState({
-			[e.target.name]: e.target.value
-		});
+		var newState = this.state;
+
+		newState.currentJobUpdate[e.target.name] = e.target.value;
+
+		this.setState(newState);
 	}
 
 	handleSubmit() {
@@ -35,7 +36,10 @@ class AddEditJobUpdate extends Component {
 		axios
 			.post(
 				`/api/jobupdate/`,
-				Object.assign({ outtageId: this.props.outtageId }, this.state),
+				Object.assign(
+					{ outtageId: this.props.outtageId },
+					this.state.currentJobUpdate
+				),
 				{ headers: { token: jwtoken } }
 			)
 			.then(res => {
@@ -65,11 +69,17 @@ class AddEditJobUpdate extends Component {
 						/>
 					</Form.Field>
 					<Form.Field>
-						<label>Estimated Work Time</label>
+						<label>Delay Code</label>
 						<Select
-							onChange={(e, { value }) =>
-								this.setState({ estimatedWorkTime: value })
-							}
+							onChange={(e, { value }) => {
+								this.setState(prevState => ({
+									currentJobUpdate: {
+										...prevState.currentJobUpdate,
+										delayCode: value
+									}
+								}));
+							}}
+							name="delayCode"
 							placeholder="Select your country"
 							options={this.delayKeyCodes}
 						/>
@@ -83,9 +93,11 @@ class AddEditJobUpdate extends Component {
 						/>
 					</Form.Field>
 				</Form>
-				<Button onClick={this.handleSubmit.bind(this)}>
-					Add Update
-				</Button>
+				<div style={{ padding: '1em 0' }}>
+					<Button onClick={this.handleSubmit.bind(this)}>
+						Add Update
+					</Button>
+				</div>
 			</div>
 		);
 	}

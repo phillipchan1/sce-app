@@ -254,7 +254,7 @@ body.vsc-initialized .ui.button {
 
 body.vsc-initialized .ui.modal {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
-  border-radius: 2em; }
+  border-radius: 3em; }
 
 body.vsc-initialized .ui.dimmer {
   background: rgba(0, 0, 0, 0.15); }
