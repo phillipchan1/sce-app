@@ -14,17 +14,6 @@ if (process.env.NODE_ENV === 'dev') {
 	}/${config.db_name}`;
 }
 
-mongoose.connect(
-	dbURL,
-	err => {
-		if (err) {
-			console.log('Failed to connect to mongodb at ' + dbURL);
-		} else {
-			console.log('Successfully connected to mongodb at ' + dbURL);
-		}
-	}
-);
-
 // seed data
 seeder.connect(
 	dbURL,
@@ -34,6 +23,21 @@ seeder.connect(
 		seeder.clearModels(['Outtage'], function() {
 			seeder.populateModels(outtages, function() {
 				seeder.disconnect();
+
+				mongoose.connect(
+					dbURL,
+					err => {
+						if (err) {
+							console.log(
+								'Failed to connect to mongodb at ' + dbURL
+							);
+						} else {
+							console.log(
+								'Successfully connected to mongodb at ' + dbURL
+							);
+						}
+					}
+				);
 			});
 		});
 
