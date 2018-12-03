@@ -114,6 +114,9 @@
   margin-top: 60px;
   padding: 2em; }
   .body-container .body-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     width: 1080px; }
     @media all and (max-width: 1000px) {
       .body-container .body-content {
@@ -127,6 +130,7 @@
 
 .outtage-page {
   display: flex;
+  width: 100%;
   flex-wrap: wrap; }
   .outtage-page .outtage-information {
     width: 50%; }

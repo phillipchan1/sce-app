@@ -8,6 +8,9 @@
 	padding: 2em;
 
 	.body-content {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
 		width: 1080px;
 
 		@media all and (max-width: 1000px) {
