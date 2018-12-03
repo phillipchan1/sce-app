@@ -47,7 +47,7 @@ class Register extends Component {
 				<div
 					className="auth-background"
 					style={{
-						backgroundImage: `url(https://source.unsplash.com/collection/2022043/1600x900)`
+						backgroundImage: `url(https://source.unsplash.com/collection/2022043/1200x900)`
 					}}
 				/>
 				<div className="auth-container">
