@@ -19,11 +19,14 @@
   .outtage-card:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18); }
   .outtage-card .status {
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     padding: 1em;
-    color: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
-    font-size: 0.8em; }
+    font-size: 0.7em;
+    font-weight: bold;
+    text-align: center;
+    width: 100px; }
 
 .update-card {
   width: 100%;
@@ -129,6 +132,9 @@
   flex-direction: column;
   margin-top: 60px;
   padding: 2em; }
+  @media all and (max-width: 1000px) {
+    .body-container {
+      padding: 0; } }
   .body-container .body-content {
     align-items: center;
     display: flex;

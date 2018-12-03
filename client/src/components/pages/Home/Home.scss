@@ -3,9 +3,12 @@
 	background: #f9fafc;
 	display: flex;
 	flex-direction: column;
-	// min-height: 100vh;
 	margin-top: 60px;
 	padding: 2em;
+
+	@media all and (max-width: 1000px) {
+		padding: 0;
+	}
 
 	.body-content {
 		align-items: center;

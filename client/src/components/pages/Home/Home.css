@@ -5,6 +5,9 @@
   flex-direction: column;
   margin-top: 60px;
   padding: 2em; }
+  @media all and (max-width: 1000px) {
+    .body-container {
+      padding: 0; } }
   .body-container .body-content {
     align-items: center;
     display: flex;
