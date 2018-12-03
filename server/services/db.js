@@ -26,53 +26,53 @@ mongoose.connect(
 );
 
 // seed data
-// seeder.connect(
-// 	dbURL,
-// 	() => {
-// 		seeder.loadModels(['server/components/Outtage/OuttageModel']);
+seeder.connect(
+	dbURL,
+	() => {
+		seeder.loadModels(['server/components/Outtage/OuttageModel']);
 
-// 		seeder.clearModels(['Outtage'], function() {
-// 			seeder.populateModels(outtages, function() {
-// 				seeder.disconnect();
-// 			});
-// 		});
+		seeder.clearModels(['Outtage'], function() {
+			seeder.populateModels(outtages, function() {
+				seeder.disconnect();
+			});
+		});
 
-// 		var outtages = [
-// 			{
-// 				model: 'Outtage',
-// 				documents: [
-// 					{
-// 						id: 1234,
-// 						type: 'planned',
-// 						city: 'Chicago',
-// 						address: '920 S Rosemead Ave',
-// 						customersImpacted: 12,
-// 						outageStartTime: 123213,
-// 						reason: 'Equipmenet Upgrade',
-// 						status: 'Not Started'
-// 					},
-// 					{
-// 						id: 5678,
-// 						type: 'planned',
-// 						city: 'Chicago',
-// 						address: '920 S Rosemead Ave',
-// 						customersImpacted: 10,
-// 						outageStartTime: 124124,
-// 						reason: 'Equipmenet Break',
-// 						status: 'Not Started'
-// 					},
-// 					{
-// 						id: 567118,
-// 						type: 'planned',
-// 						city: 'Chicago',
-// 						address: '920 S Rosemead Ave',
-// 						customersImpacted: 10,
-// 						outageStartTime: 124124,
-// 						reason: 'Equipmenet Break',
-// 						status: 'Not Started'
-// 					}
-// 				]
-// 			}
-// 		];
-// 	}
-// );
+		var outtages = [
+			{
+				model: 'Outtage',
+				documents: [
+					{
+						id: 1234,
+						type: 'planned',
+						city: 'Chicago',
+						address: '920 S Rosemead Ave',
+						customersImpacted: 12,
+						outageStartTime: 123213,
+						reason: 'Equipmenet Upgrade',
+						status: 'Not Started'
+					},
+					{
+						id: 5678,
+						type: 'planned',
+						city: 'Chicago',
+						address: '920 S Rosemead Ave',
+						customersImpacted: 10,
+						outageStartTime: 124124,
+						reason: 'Equipmenet Break',
+						status: 'Not Started'
+					},
+					{
+						id: 567118,
+						type: 'planned',
+						city: 'Chicago',
+						address: '920 S Rosemead Ave',
+						customersImpacted: 10,
+						outageStartTime: 124124,
+						reason: 'Equipmenet Break',
+						status: 'Not Started'
+					}
+				]
+			}
+		];
+	}
+);
