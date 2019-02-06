@@ -42,12 +42,12 @@ class Home extends Component {
 
 				<div className="body-container">
 					<div className="body-content">
+						Home
 						<ProtectedRoute
 							exact
 							path={`/`}
 							component={OuttagesPage}
 						/>
-
 						<ProtectedRoute
 							exact
 							path={`/admin`}
